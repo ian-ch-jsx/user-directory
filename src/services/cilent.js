@@ -5,7 +5,7 @@ export const client = createClient(
   process.env.SUPABASE_KEY
 );
 
-export const checkError = ({ data, error }) => {
+export const parseData = ({ data, error }) => {
   if (error) throw error;
 
   return data;
