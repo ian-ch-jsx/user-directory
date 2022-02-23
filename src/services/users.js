@@ -1,7 +1,19 @@
-// get user
+import { checkError, client } from './cilent';
 
-// sign up user
+export function getUser() {
+  return client.auth.user();
+}
 
-// sign in user
+export async function signUpUser(email, password) {
+  const resp = await client.auth.signUp({ email, password });
+  return checkError(resp);
+}
 
-// sign out user
+export async function signInUser(email, password) {
+  const resp = await client.auth.signIn({ email, password });
+  return checkError(resp);
+}
+
+export async function signOutUser() {
+  return client.auth.signOut();
+}
