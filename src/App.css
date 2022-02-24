@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&family=Source+Code+Pro:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&family=Roboto:wght@100;300&display=swap');
 
 a {
   color: lightcoral;
@@ -12,4 +12,14 @@ body {
   padding: 0;
   margin: 0;
   background-color: #f8fbef;
+  font-family: 'Montserrat', sans-serif;
+
+  color: #6e9105;
+}
+
+h2 {
+  color: #7aa105;
+  font-size: 1.4rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }

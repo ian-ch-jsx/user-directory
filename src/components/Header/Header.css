@@ -20,7 +20,7 @@ header span {
 header h1 {
   color: #f8fbef;
   font-size: 2rem;
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   padding-top: 15px;
 }
@@ -31,10 +31,11 @@ header button {
   padding: 10px;
   border-radius: 20px;
   color: #68870b;
-  font-family: 'source code pro';
-  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
 }
 
 header button:hover {
   cursor: pointer;
+  font-weight: bold;
 }

@@ -17,11 +17,10 @@ export default function Header() {
       <span>
         <img src="./assets/headerdog.png" />
         <h1>
-          {' '}
-          <strong>Happy Tails</strong> Employee Directory {user?.email}
+          <strong>Happy Tails</strong> Employee Directory
         </h1>
       </span>
-      <button onClick={handleLogout}>sign out</button>
+      {user?.email ? 'wtf' : 'Not Signed in.'}
     </header>
   );
 }
