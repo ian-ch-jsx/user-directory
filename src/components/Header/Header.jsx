@@ -1,3 +1,4 @@
+import './Header.css';
 import { useHistory } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import { signOutUser } from '../../services/users';
@@ -12,9 +13,15 @@ export default function Header() {
     history.replace('/');
   };
   return (
-    <div>
-      <p>WELCOME TO THE DIRECTORY {user?.email} |</p>
+    <header>
+      <span>
+        <img src="./assets/headerdog.png" />
+        <h1>
+          {' '}
+          <strong>Happy Tails</strong> Employee Directory {user?.email}
+        </h1>
+      </span>
       <button onClick={handleLogout}>sign out</button>
-    </div>
+    </header>
   );
 }

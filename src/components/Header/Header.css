@@ -1,0 +1,40 @@
+header {
+  display: flex;
+  padding: 0px 10px;
+  justify-content: space-between;
+  background-color: #8eb02a;
+  align-items: center;
+}
+
+header img {
+  width: 90px;
+  padding-right: 10px;
+}
+
+header span {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+header h1 {
+  color: #f8fbef;
+  font-size: 2rem;
+  font-family: 'Roboto';
+  font-weight: 300;
+  padding-top: 15px;
+}
+
+header button {
+  background-color: #f8fbef;
+  border: 0;
+  padding: 10px;
+  border-radius: 20px;
+  color: #68870b;
+  font-family: 'source code pro';
+  text-transform: uppercase;
+}
+
+header button:hover {
+  cursor: pointer;
+}

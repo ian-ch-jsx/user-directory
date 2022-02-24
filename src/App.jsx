@@ -4,9 +4,9 @@ import { UserProvider } from './context/UserContext';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Header from './components/Header/Header';
 import Home from './views/Home/Home';
-import AuthForm from './views/Auth/Auth';
+import AuthForm from './components/AuthForm/AuthForm';
 import Profile from './views/Profile/Profile';
-import Confirm from './views/Auth/Confirm';
+import Confirm from './components/AuthForm/Confirm';
 
 export default function App() {
   return (
