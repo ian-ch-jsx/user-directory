@@ -16,7 +16,10 @@ export default function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/auth">
+          <Route exact path="/login">
+            <AuthForm isSigningIn />
+          </Route>
+          <Route exact path="/register">
             <AuthForm />
           </Route>
           <Route exact path="/confirm">

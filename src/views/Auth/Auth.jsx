@@ -1,23 +1,21 @@
 // import './AuthForm.css';
-import { useState } from 'react';
+
 import { useHistory } from 'react-router-dom/';
 import { signInUser, signUpUser } from '../../services/users';
 import { useUser } from '../../context/UserContext';
 
-export default function AuthForm() {
+export default function AuthForm({ isSigningIn = false }) {
   const history = useHistory();
-  const { setUser, type, setType, password, setPassword, email, setEmail } =
-    useUser();
+  const { setUser, password, setPassword, email, setEmail } = useUser();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       let resp;
-      if (type === 'signin') {
+      if (isSigningIn) {
         resp = await signInUser(email, password);
         history.replace('/profile');
-      }
-      if (type === 'signup') {
+      } else {
         resp = await signUpUser(email, password);
         history.replace('/confirm');
       }
@@ -29,22 +27,6 @@ export default function AuthForm() {
 
   return (
     <>
-      <span className="auth-tabs">
-        <h3
-          onClick={() => {
-            setType('signin');
-          }}
-        >
-          sign in
-        </h3>
-        <h3
-          onClick={() => {
-            setType('signup');
-          }}
-        >
-          sign up
-        </h3>
-      </span>
       <form onSubmit={handleSubmit}>
         <input
           type="email"

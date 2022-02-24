@@ -7,7 +7,6 @@ export const UserProvider = ({ children }) => {
   const currentUser = getUser();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [type, setType] = useState('signin');
   const [user, setUser] = useState(
     currentUser ? { id: currentUser.id, email: currentUser.email } : {}
   );
@@ -21,8 +20,6 @@ export const UserProvider = ({ children }) => {
         setEmail,
         password,
         setPassword,
-        type,
-        setType,
       }}
     >
       {children}
