@@ -1,5 +1,4 @@
 // import './AuthForm.css';
-
 import { useHistory } from 'react-router-dom/';
 import { signInUser, signUpUser } from '../../services/users';
 import { useUser } from '../../context/UserContext';

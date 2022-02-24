@@ -4,7 +4,7 @@ export default function Home() {
     <div>
       Welcome to the home page.
       <p>
-        <Link to="/auth">Login/sign up</Link>
+        <Link to="/login">Login</Link> | <Link to="/register">Register</Link>
       </p>
     </div>
   );
