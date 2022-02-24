@@ -1,5 +1,4 @@
 import { useHistory } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import { signOutUser } from '../../services/users';
 

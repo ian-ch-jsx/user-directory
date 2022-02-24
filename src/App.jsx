@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { UserProvider } from './context/UserContext';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Header from './components/Header/Header';
 import Home from './views/Home/Home';
 import AuthForm from './views/Auth/Auth';
@@ -25,9 +26,9 @@ export default function App() {
           <Route exact path="/confirm">
             <Confirm />
           </Route>
-          <Route exact path="/profile">
+          <PrivateRoute exact path="/profile">
             <Profile />
-          </Route>
+          </PrivateRoute>
         </Switch>
       </BrowserRouter>
     </UserProvider>
