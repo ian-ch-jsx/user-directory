@@ -11,15 +11,21 @@ export default function ProfileForm({ isCreating = false }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    let resp;
     if (isCreating) {
       resp = await createProfile({
-        name: profile.userName,
+        name: profile.name,
         birthday: profile.birthday,
         email: user.email,
         bio: profile.bio,
       });
     } else {
-      resp = await updateProfile();
+      resp = await updateProfile({
+        name: profile.name,
+        birthday: profile.birthday,
+        email: user.email,
+        bio: profile.bio,
+      });
     }
     setProfile(resp);
     history.replace('/profile');
@@ -28,11 +34,12 @@ export default function ProfileForm({ isCreating = false }) {
   return (
     <div>
       <h2>Create Profile</h2>
+      <p>Email: {profile.email}</p>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="name"
-          value={profile.name}
+          value={profile?.name}
           onChange={(e) =>
             setProfile((prevState) => ({
               ...prevState,

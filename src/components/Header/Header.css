@@ -25,10 +25,15 @@ header h1 {
   padding-top: 15px;
 }
 
+header p {
+  color: #f8fbef;
+}
+
 header button {
   background-color: #f8fbef;
   border: 0;
   padding: 10px;
+  margin: 10px;
   border-radius: 20px;
   color: #68870b;
   font-family: 'Roboto', sans-serif;

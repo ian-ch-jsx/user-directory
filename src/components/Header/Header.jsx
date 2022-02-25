@@ -2,14 +2,20 @@ import './Header.css';
 import { useHistory } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import { signOutUser } from '../../services/users';
+import { useProfile } from '../../hooks/useProfile';
 
 export default function Header() {
-  const user = useUser();
+  const { user, setUser } = useUser();
+  const { profile } = useProfile();
   const history = useHistory();
 
-  const handleLogout = (e) => {
-    e.preventDefault();
-    signOutUser(user);
+  const handleLogin = () => {
+    history.push('/login');
+  };
+
+  const handleLogout = async () => {
+    await signOutUser();
+    setUser({});
     history.replace('/');
   };
   return (
@@ -20,7 +26,11 @@ export default function Header() {
           <strong>Happy Tails</strong> Employee Directory
         </h1>
       </span>
-      {user?.email ? 'wtf' : 'Not Signed in.'}
+      <span>
+        <p>{user?.email ? `logged in as ${user.email}` : 'Not Signed in. '}</p>
+        {!user.email && <button onClick={handleLogin}>Log In</button>}
+        {user.email && <button onClick={handleLogout}>Log Out</button>}
+      </span>
     </header>
   );
 }
