@@ -28,7 +28,7 @@ export default function Header() {
         </h1>
       </span>
       <span>
-        <p>{user?.email ? `logged in as ${user.email}` : 'Not Signed in. '}</p>
+        <p>{user?.email ? `logged in as ${user.email}` : ''}</p>
         {!user.email && <button onClick={handleLogin}>Log In</button>}
         {user.email && <button onClick={handleLogout}>Log Out</button>}
       </span>

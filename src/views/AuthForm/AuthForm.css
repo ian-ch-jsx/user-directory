@@ -35,3 +35,11 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+.confirmContainer {
+  padding-top: 100px;
+  flex-direction: column;
+  display: flex;
+  margin: auto;
+  align-items: center;
+}

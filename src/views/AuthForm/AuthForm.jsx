@@ -1,5 +1,5 @@
 import styles from './AuthForm.css';
-import { useHistory } from 'react-router-dom/';
+import { Link, useHistory } from 'react-router-dom/';
 import { signInUser, signUpUser } from '../../services/users';
 import { useUser } from '../../context/UserContext';
 
@@ -40,6 +40,15 @@ export default function AuthForm({ isSigningIn = false }) {
         />
         <button type="submit">Submit</button>
       </form>
+      {isSigningIn ? (
+        <p>
+          Not registered? <Link to="/register">Sign up!</Link>
+        </p>
+      ) : (
+        <p>
+          Already registered? <Link to="/login">Sign in!</Link>
+        </p>
+      )}
     </div>
   );
 }
