@@ -1,11 +1,13 @@
 import React from 'react';
 import { useUser } from '../../context/UserContext';
-import { useProfile } from '../../context/ProfileContext';
+import { useProfile } from '../../hooks/useProfile';
 import { updateProfile, createProfile } from '../../services/profiles';
+import { useHistory } from 'react-router-dom';
 
 export default function ProfileForm({ isCreating = false }) {
   const { profile, setProfile } = useProfile();
   const { user } = useUser();
+  const history = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,6 +22,7 @@ export default function ProfileForm({ isCreating = false }) {
       resp = await updateProfile();
     }
     setProfile(resp);
+    history.replace('/profile');
   };
 
   return (
