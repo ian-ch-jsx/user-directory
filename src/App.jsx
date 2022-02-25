@@ -8,6 +8,7 @@ import Home from './views/Home/Home';
 import AuthForm from './components/AuthForm/AuthForm';
 import Profile from './views/Profile/Profile';
 import Confirm from './components/AuthForm/Confirm';
+import ProfileForm from './components/ProfileForm/ProfileForm';
 
 export default function App() {
   return (
@@ -28,6 +29,15 @@ export default function App() {
             <Route exact path="/confirm">
               <Confirm />
             </Route>
+            <PrivateRoute exact path="/profile">
+              <Profile />
+            </PrivateRoute>
+            <PrivateRoute exact path="/profile/edit">
+              <ProfileForm />
+            </PrivateRoute>
+            <PrivateRoute exact path="/profile/create">
+              <ProfileForm isCreating />
+            </PrivateRoute>
             <PrivateRoute exact path="/profile">
               <Profile />
             </PrivateRoute>

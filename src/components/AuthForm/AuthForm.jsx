@@ -13,7 +13,7 @@ export default function AuthForm({ isSigningIn = false }) {
       let resp;
       if (isSigningIn) {
         resp = await signInUser(email, password);
-        history.replace('/profile');
+        history.replace('/profile/create');
       } else {
         resp = await signUpUser(email, password);
         history.replace('/confirm');

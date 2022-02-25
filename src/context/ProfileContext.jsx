@@ -1,20 +1,26 @@
 import { createContext, useContext, useState } from 'react';
 import { getProfile } from '../services/profiles';
+import { useEffect } from 'react';
 
 const ProfileContext = createContext();
 
 export const ProfileProvider = ({ children }) => {
-  const currentProfile = getProfile();
-  const [profile, setProfile] = useState(
-    currentProfile
-      ? {
-          name: currentProfile.name,
-          email: currentProfile.email,
-          birthday: currentProfile.birthday,
-          bio: currentProfile.bio,
-        }
-      : {}
-  );
+  const [profile, setProfile] = useState({
+    name: '',
+    email: '',
+    birthday: '',
+    bio: '',
+  });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const profile = await getProfile();
+      if (profile.length > 0) {
+        setProfile(profile[0]);
+      }
+    };
+    fetchData();
+  }, []);
 
   return (
     <ProfileContext.Provider value={{ profile, setProfile }}>
@@ -23,7 +29,7 @@ export const ProfileProvider = ({ children }) => {
   );
 };
 
-export const useUser = () => {
+export const useProfile = () => {
   const context = useContext(ProfileContext);
 
   if (context === undefined) {
