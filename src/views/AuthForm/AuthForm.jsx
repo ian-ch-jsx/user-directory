@@ -30,11 +30,15 @@ export default function AuthForm({ isSigningIn = false }) {
       <form onSubmit={handleSubmit}>
         <input
           type="email"
+          placeholder="email"
+          aria-label="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
+          placeholder="password"
+          aria-label="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />

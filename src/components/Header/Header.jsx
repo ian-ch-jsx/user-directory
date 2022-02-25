@@ -20,7 +20,7 @@ export default function Header() {
   return (
     <header>
       <span>
-        <img src="../../assets/headerdog.png" />
+        <img src="../../assets/headerdog.png" alt="" />
         <h1>
           <Link to="/">
             <strong>Happy Tails</strong> Employee Directory
