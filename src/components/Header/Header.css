@@ -44,3 +44,16 @@ header button:hover {
   cursor: pointer;
   font-weight: bold;
 }
+
+header a {
+  text-decoration: none;
+  color: #f8fbef;
+}
+
+header a:visited {
+  color: #f8fbef;
+}
+
+header a:hover {
+  text-decoration: underline;
+}

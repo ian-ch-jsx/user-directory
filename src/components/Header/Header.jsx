@@ -2,11 +2,10 @@ import './Header.css';
 import { useHistory } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import { signOutUser } from '../../services/users';
-import { useProfile } from '../../hooks/useProfile';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const { user, setUser } = useUser();
-  const { profile } = useProfile();
   const history = useHistory();
 
   const handleLogin = () => {
@@ -21,9 +20,11 @@ export default function Header() {
   return (
     <header>
       <span>
-        <img src="./assets/headerdog.png" />
+        <img src="../../assets/headerdog.png" />
         <h1>
-          <strong>Happy Tails</strong> Employee Directory
+          <Link to="/">
+            <strong>Happy Tails</strong> Employee Directory
+          </Link>
         </h1>
       </span>
       <span>

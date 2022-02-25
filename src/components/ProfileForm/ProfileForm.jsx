@@ -1,4 +1,4 @@
-import React from 'react';
+import styles from './ProfileForm.css';
 import { useUser } from '../../context/UserContext';
 import { useProfile } from '../../hooks/useProfile';
 import { updateProfile, createProfile } from '../../services/profiles';
@@ -32,8 +32,8 @@ export default function ProfileForm({ isCreating = false }) {
   };
 
   return (
-    <div>
-      <h2>Create Profile</h2>
+    <div className={`${styles.profileFormContainer}`}>
+      {isCreating ? <h2>Create Profile</h2> : <h2>Edit Profile</h2>}
       <p>Email: {profile.email}</p>
       <form onSubmit={handleSubmit}>
         <input
@@ -57,8 +57,7 @@ export default function ProfileForm({ isCreating = false }) {
             }))
           }
         />
-        <input
-          type="textarea"
+        <textarea
           placeholder="bio"
           value={profile.bio}
           onChange={(e) =>

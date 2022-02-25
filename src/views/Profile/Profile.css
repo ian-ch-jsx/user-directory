@@ -1,0 +1,22 @@
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileContainer button {
+  background-color: #d4e79c;
+  border: 0;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
+  color: #68870b;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  text-transform: lowercase;
+}
+
+.profileContainer button:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

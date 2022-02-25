@@ -1,24 +1,25 @@
-.profileFormContainer {
+.authContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 40px;
 }
 
-.profileFormContainer form {
+.authContainer form {
   display: flex;
   flex-direction: column;
 }
 
-.profileFormContainer input {
+.authContainer input {
   border: 0px;
   margin: 5px;
   background-color: #d4e79c;
+  color: #68870b;
   padding: 5px;
   border-radius: 10px;
-  color: #68870b;
 }
 
-.profileFormContainer button {
+.authContainer button {
   background-color: #d4e79c;
   border: 0;
   padding: 10px;
@@ -30,18 +31,7 @@
   text-transform: lowercase;
 }
 
-.profileFormContainer textarea {
-  border: 0px;
-  margin: 5px;
-  background-color: #d4e79c;
-  padding: 5px;
-  border-radius: 10px;
-  color: #68870b;
-  width: 200px;
-  height: 100px;
-}
-
-.profileFormContainer button:hover {
+.authContainer button:hover {
   cursor: pointer;
   font-weight: bold;
 }

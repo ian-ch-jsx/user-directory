@@ -1,4 +1,4 @@
-// import './AuthForm.css';
+import styles from './AuthForm.css';
 import { useHistory } from 'react-router-dom/';
 import { signInUser, signUpUser } from '../../services/users';
 import { useUser } from '../../context/UserContext';
@@ -25,7 +25,8 @@ export default function AuthForm({ isSigningIn = false }) {
   };
 
   return (
-    <>
+    <div className={`${styles.authContainer}`}>
+      {isSigningIn ? <h2>Sign In</h2> : <h2>Register</h2>}
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -39,6 +40,6 @@ export default function AuthForm({ isSigningIn = false }) {
         />
         <button type="submit">Submit</button>
       </form>
-    </>
+    </div>
   );
 }

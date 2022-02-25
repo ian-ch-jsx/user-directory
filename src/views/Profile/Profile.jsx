@@ -1,6 +1,7 @@
 import { Redirect } from 'react-router-dom';
 import { useProfile } from '../../hooks/useProfile';
 import { useHistory } from 'react-router-dom';
+import styles from './Profile.css';
 
 export default function Profile() {
   const { profile, loading } = useProfile();
@@ -14,8 +15,8 @@ export default function Profile() {
   if (loading) return <p>...Loading</p>;
   if (!loading && !profile.name) return <Redirect to="/profile/create" />;
   return (
-    <div>
-      profile!
+    <div className={`${styles.profileContainer}`}>
+      <h2>Employee Profile</h2>
       <p>Name: {profile.name}</p>
       <p>Email: {profile.email}</p>
       <p>Birthday: {profile.birthday}</p>
